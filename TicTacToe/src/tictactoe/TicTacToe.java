@@ -84,6 +84,6 @@ public class TicTacToe {
 				(b[0][2]==turn && b[1][2]==turn && b[2][2]==turn)||
 				//diagonal win
 				(b[0][0]==turn && b[1][1]==turn && b[2][2]==turn)||
-				(b[0][2]==turn && b[1][1]==turn && b[2][1]==turn));
+				(b[0][2]==turn && b[1][1]==turn && b[2][0]==turn));
 	}
 }
