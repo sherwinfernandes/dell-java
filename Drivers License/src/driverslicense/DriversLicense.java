@@ -10,11 +10,12 @@ public class DriversLicense {
 	private final int _height; //Height
 	private final String _gender; //Gender
 	
-	public String getFullName() {
+	
+	public String getFullName() { // Returns the fuill name
 		return _first+" "+_last;
 	}
 	
-	public int getAge() {
+	public int getAge() { // Retuens the age
 		return Period.between(_dob, LocalDate.now()).getYears();
 	}
 	
@@ -26,41 +27,41 @@ public class DriversLicense {
 		this._gender=_gender;
 	}
 	
-	public static class Builder{
+	public static class Builder{ // Builder design pattern
 		private String _first;//First Name
 		private String _last; //Last Name
 		private LocalDate _dob; //DOB
 		private int _height; //Height
 		private String _gender; //Gender
 		
-		public DriversLicense build() {
+		public DriversLicense build() { //Builds a DriversLicense
 			return new DriversLicense(_first,_last, _dob,_height,_gender);
 		}
 		
-		public Builder first(String _first) {
+		public Builder first(String _first) { //first name
 			this._first=_first;
 			return this;
 		}
 		
-		public Builder last(String _last) {
+		public Builder last(String _last) { //last name
 			this._last=_last;
 			return this;
 		}
 
 		
-		public Builder dob(LocalDate _dob) {
+		public Builder dob(LocalDate _dob) { // dob
 			this._dob=_dob;
 			return this;
 		}
 
 		
-		public Builder height(int _height) {
+		public Builder height(int _height) { //height
 			this._height=_height;
 			return this;
 		}
 
 		
-		public Builder gender(String _gender) {
+		public Builder gender(String _gender) {// gender
 			this._gender=_gender;
 			return this;
 		}
