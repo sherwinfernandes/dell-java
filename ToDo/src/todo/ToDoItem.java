@@ -9,24 +9,27 @@ public class ToDoItem {
 	//private static int counter=0;
 	
 	public ToDoItem(String desc) {
-		id=Dao.getCounter();
+		id=Dao.getCounter(); //get the counter from the Dao abstract class
 		this.desc = desc;
 		completed= false;
 	}
 	
-	
+	//create an item
 	public ToDoItem(String desc, boolean completed) {
 		id=MemoryDao.getCounter();
 		this.desc = desc;
 		this.completed= completed;
 	}
 	
+	// method for creating duplicate items for the list method
 	public ToDoItem(int id, String desc, boolean completed) {
 		this.id=id;
 		this.desc = desc;
 		this.completed= completed;
 	}
 	
+	
+	//getters and setters
 	public int getId() {
 		return id;
 	}
@@ -47,8 +50,10 @@ public class ToDoItem {
 		this.completed = completed;
 	}
 	
+	
 	@Override
 	public String toString() {
+		// to print the items
 		return "ToDoItem [id=" + id + ", desc=" + desc + ", completed=" + completed + "]";
 	}
 

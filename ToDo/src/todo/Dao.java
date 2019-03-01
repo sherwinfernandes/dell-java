@@ -5,6 +5,7 @@ import java.util.List;
 
 public abstract class Dao {
 	
+	//counter for numbering ToDo items
 	private static int counter=1;
 
 	protected Dao()//create method

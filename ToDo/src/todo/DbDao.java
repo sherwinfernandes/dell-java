@@ -13,6 +13,7 @@ public class DbDao extends Dao {
 	private Connection connection;
 	private Statement statement;
 
+	// constructor
 	public DbDao() {
 		try {
 			// create a database connection
@@ -33,7 +34,7 @@ public class DbDao extends Dao {
 
 	@Override
 	public boolean update(int id, String newdesc) {
-		// TODO Auto-generated method stub
+		// update the description of an item
 		try {
 			statement.executeUpdate("update todo set desc =\"" + newdesc + "\" where id = " + id);
 			return true;
@@ -46,7 +47,7 @@ public class DbDao extends Dao {
 
 	@Override
 	public boolean update(int id, boolean done) {
-		// TODO Auto-generated method stub
+		// Update the completed status of an item
 		try {
 			int completed;
 			if (done)
@@ -64,7 +65,7 @@ public class DbDao extends Dao {
 
 	@Override
 	public boolean add(ToDoItem toAdd) {
-		// TODO Auto-generated method stub
+		// Add a Todo item to the list
 		try {
 			int completed;
 			if (toAdd.isCompleted())
@@ -83,7 +84,7 @@ public class DbDao extends Dao {
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
+		// delet an item 
 		try {
 			statement.executeUpdate("delete from todo where id = " + id);
 			return true;
